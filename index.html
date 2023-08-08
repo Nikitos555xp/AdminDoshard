@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" translate="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login Admin Panel</title>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body ondragstart="return false;" ondrop="return false;" onselectstart="return false;">
+<div class="container">
+    <div class="login">
+        <form>
+            <h2>Sign In</h2>
+            <div class="inputBox">
+                <input type="text" placeholder="Username">
+                <i class="fa-regular fa-user"></i>
+            </div>
+            <div class="inputBox">
+                <input type="password" placeholder="Password">
+                <i class="fa-solid fa-lock"></i>
+            </div>
+            <label>
+                <input type="checkbox"> Keep me logged
+            </label>
+            <div class="inputBox">
+                <a href="admin-panel.html">
+                 <input type="submit" value="Login in">
+                </a>
+            </div>
+        </form>
+        <h4>ИЛИ</h4>
+        <div class="fingerprint" >
+            <a href="admin-panel.html">
+                <div class="fingerprintBox">
+                    <img src="images/pngwing.com.png" alt="https://vk.com/feed">
+                </div>
+            </a>
+        </div>
+        <p>Войдите в систему с помощью vk</p>
+    </div>
+</div>
+    <!-- Animation pages -->
+    <script type="text/javascript">
+        $(document).ready(function() {
+            var body = $("body");
+            body.fadeIn(1000);
+            $(document).on("click", "a:not([href^='#']):not([href^='tel']):not([href^='mailto'])", function (e) {
+                e.preventDefault();
+                $("body").fadeOut(1000);
+                var self = this;
+                setTimeout(function () {
+                    window.location.href = $(self).attr("href");
+                }, 1000);
+            });
+        });
+
+        var ImagesL = document.querySelectorAll("img");
+        for (var i = 0; i < ImagesL.length; i++) {
+            ImagesL[i].onmousedown = function (e) {
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>
